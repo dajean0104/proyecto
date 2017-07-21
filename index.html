@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Páginas Web -- Grupo 4</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div class="container">
+	<section id="content">
+		<form action="">
+			<h1>Login</h1>
+			<div>
+				<input type="text" placeholder="Username" required=""  name = "userid"/>
+			</div>
+			<div>
+				<input type="password" placeholder="Password" required=""  name="pswrd"/>
+			</div>
+			<div>
+				<input type="submit" onclick="check(this.form)" value="Login" />
+                                
+				<a href="#">Lost your password?</a>
+				<a href="#">Register</a>
+			</div>
+		</form><!-- form -->
+        <script language="javascript">
+            function check(form) { /*function to check userid & password*/
+                /*the following code checkes whether the entered userid and password are matching*/
+                if(form.userid.value == "admin" && form.pswrd.value == "admin123") {
+                    window.open('target.html')/*opens the target page while Id & password matches*/
+                }
+                else {
+                    alert("Error Password or Username")/*displays error message*/
+                }
+            }
+        </script>
+        
+       <script type="text/javascript">
+var tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+var d=new Date();
+var nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+document.getElementById('clockbox').innerHTML=""+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+
+
+
+        <div class="button">
+			<a id="clockbox"></a>
+		</div><!-- button -->
+	</section><!-- content -->
+</div><!-- container -->
+</body>
+</html>
+  
