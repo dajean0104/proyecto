@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title> Funcion Fibonacci </title>
+	
+	<style type="text/css">
+	body {
+	   color: white;
+	   background-color: #084B8A }
+	</style>
+
+
+	<script type="text/javascript">
+	function fibonacci()
+	{
+		var contenedor=document.getElementById("resultado");
+		var inicio=parseInt(document.getElementById("inicio").value);
+		var final=parseInt(document.getElementById("final").value);
+		var suma=0, a=0, b=1;
+		var resultado="";
+		
+		for(var i=1; i<=final; i++)
+		{
+			a=b;
+			b=suma;
+			suma=a+b;
+			if(inicio==0 && i==1)
+			{
+				resultado+="El valor de 0 es 0 <br>";
+			}
+			if(inicio<=i)
+			{
+			resultado+="El valor "+i+" es "+suma+"<br>";
+			}
+		}
+		
+		contenedor.innerHTML=resultado;		
+		
+	}
+	</script>
+
+</head>
+
+<body>
+	<h1>Función Fibonacci</h1>
+	<p> 
+	<p>Ingrese el valor inicial: 
+	<input id="inicio" type="text" /> </p>
+	<p>Ingrese el valor final:
+	<input id="final" type="text" /> </p>
+	<p>
+	<input id="accion" type="button" value="Ejecutar" onclick="fibonacci();" /> </p>
+	<p id="resultado" > </p>
+</body>
+
+</html>
